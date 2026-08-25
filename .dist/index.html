@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================================= -->
+<!--  EDIT THIS: your name + a one-line description for browsers   -->
+<!-- ============================================================= -->
+<title>Mahfoudh Senhoury — Software Engineer</title>
+<meta name="description" content="Software engineer and computer scientist. Web platforms, e-commerce, and tools.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper:  #FCFBF8;
+    --ink:    #1B1A17;
+    --muted:  #94908A;
+    --line:   #E5E1D9;
+    --accent: #2A3D66;   /* the one accent — used only on hover/focus */
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Newsreader", Georgia, serif;
+    line-height: 1.5;
+    font-size: 18px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: clamp(3.5rem, 10vw, 7rem) 1.5rem clamp(3rem, 8vw, 5rem);
+  }
+
+  /* small typewriter labels — the "editorial metadata" voice */
+  .label {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ---------- hero ---------- */
+  .eyebrow { margin: 0 0 1.6rem; }
+  .eyebrow .dot { color: var(--accent); }
+
+  .name {
+    font-size: clamp(2.7rem, 8.5vw, 4.6rem);
+    font-weight: 500;
+    line-height: 1.02;
+    letter-spacing: -0.015em;
+    margin: 0;
+  }
+
+  .intro {
+    font-size: 1.18rem;
+    color: #4A473F;
+    max-width: 34ch;
+    margin: 1.5rem 0 0;
+  }
+  .intro em { font-style: italic; }
+
+  /* ---------- section ---------- */
+  .section { margin-top: clamp(3.5rem, 9vw, 5.5rem); }
+  .section > .label {
+    display: block;
+    padding-bottom: 0.9rem;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 0.4rem;
+  }
+
+  /* ---------- the table-of-contents index ---------- */
+  .index { display: flex; flex-direction: column; }
+
+  .entry {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    padding: 0.95rem 0;
+    border-bottom: 1px solid var(--line);
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .entry-title {
+    font-size: 1.22rem;
+    line-height: 1.25;
+    transition: color 0.18s ease;
+  }
+  .entry-arrow {
+    font-family: "IBM Plex Mono", monospace;
+    color: var(--accent);
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: opacity 0.18s ease, transform 0.18s ease;
+  }
+
+  /* the dotted leader line that fills the gap, table-of-contents style */
+  .leader {
+    flex: 1 1 auto;
+    min-width: 1.5rem;
+    align-self: stretch;
+    border-bottom: 1.5px dotted var(--line);
+    transform: translateY(-0.32em);
+  }
+
+  .entry-meta {
+    flex: 0 0 auto;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--muted);
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+  }
+
+  /* hover / keyboard focus */
+  .entry:hover .entry-title,
+  .entry:focus-visible .entry-title { color: var(--accent); }
+  .entry:hover .entry-arrow,
+  .entry:focus-visible .entry-arrow { opacity: 1; transform: translateX(0); }
+  .entry:focus-visible {
+    outline: none;
+    box-shadow: -0.75rem 0 0 var(--accent);
+  }
+
+  /* ---------- footer / contact ---------- */
+  .elsewhere {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.6rem;
+    margin-top: 1.2rem;
+  }
+  .elsewhere a {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 2px;
+    transition: color 0.18s ease, border-color 0.18s ease;
+  }
+  .elsewhere a:hover,
+  .elsewhere a:focus-visible {
+    color: var(--accent);
+    border-color: var(--accent);
+    outline: none;
+  }
+
+  .colophon {
+    margin-top: clamp(3.5rem, 9vw, 5.5rem);
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  /* ---------- entrance motion ---------- */
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .anim { opacity: 0; animation: rise 0.3s cubic-bezier(0.16, 0.7, 0.30, 0.5) forwards; }
+  .anim:nth-child(1) { animation-delay: 0.05s; }
+  .anim:nth-child(2) { animation-delay: 0.12s; }
+  .anim:nth-child(3) { animation-delay: 0.19s; }
+  .anim:nth-child(4) { animation-delay: 0.26s; }
+  .anim:nth-child(5) { animation-delay: 0.33s; }
+  .anim:nth-child(6) { animation-delay: 0.40s; }
+  .anim:nth-child(7) { animation-delay: 0.47s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .anim { animation: none; opacity: 1; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+  <main class="wrap">
+
+    <!-- ============================================================= -->
+    <!--  HERO — edit your role, name and intro line below             -->
+    <!-- ============================================================= -->
+    <p class="label eyebrow anim">Software Engineer <span class="dot">&middot;</span> Computer Scientist</p>
+
+    <h1 class="name anim">Mahfoudh Senhoury</h1>
+
+    <p class="intro anim">
+      I build <em>web platforms, infrastructure, digital twins, tools and e-commerce sites</em> &mdash; A selection of recent work below.
+    </p>
+
+    <!-- ============================================================= -->
+    <!--  SELECTED WORK - this is your list of portfolio links.        -->
+    <!--                                                               -->
+    <!--  To add a project, copy one <a class="entry"> ... </a> block  -->
+    <!--  and change three things:                                     -->
+    <!--    1. href="..."      -> the link to your project             -->
+    <!--    2. entry-title     -> the name of the project              -->
+    <!--    3. entry-meta      -> a short one- or two-word category     -->
+    <!-- ============================================================= -->
+    <section class="section anim">
+      <span class="label">Selected work</span>
+
+      <div class="index">
+
+
+   <a class="entry anim" href="https://apps.apple.com/us/app/walletcardmaker/id6756629414" target="_blank" rel="noopener">
+  <span class="entry-title">WalletCardMaker — iOS app that generates Apple Wallet card passes for the school<span class="entry-arrow"> &rarr;</span></span>
+  <span class="leader" aria-hidden="true"></span>
+  <span class="entry-meta">iOS App</span>
+</a>
+
+        <a class="entry anim" href="https://mahfoudhsen.github.io/digitaltwinsMS/" target="_blank" rel="noopener">
+          <span class="entry-title">Digital Twins for Smart Cities &mdash; technical log<span class="entry-arrow"> &rarr;</span></span>
+          <span class="leader" aria-hidden="true"></span>
+          <span class="entry-meta">Research</span>
+        </a>
+
+        <a class="entry anim" href="https://dev-thread-cuny.vercel.app" target="_blank" rel="noopener">
+          <span class="entry-title">Dev Thread &mdash; e-commerce store for tech apparel<span class="entry-arrow"> &rarr;</span></span>
+          <span class="leader" aria-hidden="true"></span>
+          <span class="entry-meta">E-commerce</span>
+        </a>
+
+        <a class="entry anim" href="https://senhoury-solution.vercel.app" target="_blank" rel="noopener">
+          <span class="entry-title">Senhoury Solutions &mdash; digital marketing &amp; web development for local businesses<span class="entry-arrow"> &rarr;</span></span>
+          <span class="leader" aria-hidden="true"></span>
+          <span class="entry-meta">Consulting</span>
+        </a>
+
+        <a class="entry anim" href="https://wlkata-demo.vercel.app" target="_blank" rel="noopener">
+          <span class="entry-title">Wlkata &mdash; client platform demo<span class="entry-arrow"> &rarr;</span></span>
+          <span class="leader" aria-hidden="true"></span>
+          <span class="entry-meta">Robotics</span>
+        </a>
+
+        <a class="entry anim" href="https://www.grocerytogether.org" target="_blank" rel="noopener">
+          <span class="entry-title">Grocery Together &mdash; community grocery advocacy platform<span class="entry-arrow"> &rarr;</span></span>
+          <span class="leader" aria-hidden="true"></span>
+          <span class="entry-meta">Advocacy</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!--  ELSEWHERE - email + social links. Change href and label.     -->
+    <!-- ============================================================= -->
+    <section class="section anim">
+      <span class="label">Elsewhere</span>
+      <div class="elsewhere">
+        <a href="mailto:mahfoudhsenhoury@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/mahfoudh-senhoury-4136b1347/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://substack.com/@ventosusustilo737580/reads" target="_blank" rel="noopener">Newsletter</a>
+      </div>
+    </section>
+
+    <p class="colophon anim">&copy; <span id="year"></span> Mahfoudh Senhoury</p>
+
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
